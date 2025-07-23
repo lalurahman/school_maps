@@ -186,23 +186,50 @@
                     icon: school.education_type === 'SMA' ? schoolIconSMA : schoolIconSMK
                 })
                 .addTo(map)
-                .bindTooltip(
-                    `<b>${school.name}</b><br>Kepala Sekolah: ${school.principal_name || ''}<br>Alamat: ${school.address || ''}`, {
-                        permanent: false,
-                        direction: 'top',
-                        offset: [0, -10],
-                        opacity: 0.9
-                    })
+                .bindTooltip(`
+                    <div style="font-size: 13px;">
+                        <table>
+                            <tr>
+                                <td style="vertical-align: top;"><b>${school.name}</b></td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;">NPSN</td>
+                                <td style="vertical-align: top;">: ${school.npsn || '-'}</td>
+                            </tr>
+                            <tr>
+                                <td style="vertical-align: top;">Kepala Sekolah</td>
+                                <td style="vertical-align: top;">: ${school.principal_name || '-'}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    `, {
+                    permanent: false,
+                    direction: 'top',
+                    offset: [0, -10],
+                    opacity: 0.9
+                })
+
                 .bindPopup(`
-            <b>${school.name + ' (' + school.npsn + ')'}</b><br>
-            <b>Jumlah Siswa:</b> ${school.student_count || 0}<br>
-            <b>Jumlah Guru:</b> ${school.teacher_count || 0}<br>
-            <b>Fasilitas Praktik:</b> ${school.practice_facility || ''}<br>
-            <b>Fasilitas Olahraga:</b> ${school.sports_facility || ''}<br>
-            <b>Kurikulum:</b> ${school.curriculum || ''}<br>
-            <b>Ekstrakurikuler:</b> ${school.extracurricular || ''}<br>
-            <b>Prestasi:</b> ${school.achievements || ''}<br>
-        `);
+                <div style="font-size: 14px; line-height: 1.4;">
+                    <b>${school.name + ' (' + school.npsn + ')'}</b><br><hr>
+                    <table style="width: 100%;">
+                    <tr><td style="vertical-align: top;">Jumlah Siswa</td><td style="vertical-align: top;">: ${school.student_count || 0}</td></tr>
+                    <tr><td style="vertical-align: top;">Jumlah Guru</td><td style="vertical-align: top;">: ${school.teacher_count || 0}</td></tr>
+                    <tr><td style="vertical-align: top;">Fasilitas Praktik</td><td style="vertical-align: top;">: ${school.practice_facility || 'tidak tersedia'}</td></tr>
+                    <tr><td style="vertical-align: top;">Fasilitas Olahraga</td><td style="vertical-align: top;">: ${school.sports_facility || 'tidak tersedia'}</td></tr>
+                    <tr><td style="vertical-align: top;">Kurikulum</td><td style="vertical-align: top;">: ${school.curriculum || 'tidak tersedia'}</td></tr>
+                    <tr><td style="vertical-align: top;">Ekstrakurikuler</td><td style="vertical-align: top;">: ${school.extracurricular || 'tidak tersedia'}</td></tr>
+                    <tr><td style="vertical-align: top;">Prestasi</td><td style="vertical-align: top;">: ${school.achievements || 'tidak tersedia'}</td></tr>
+                    <tr><td style="vertical-align: top;">Alamat</td><td style="vertical-align: top;">: ${school.address || 'tidak tersedia'}</td></tr>
+                    </table>
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank"
+                            style="display: none; padding: 6px 12px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 4px;">
+                            Lihat di Google Maps
+                        </a>
+                    </div>
+                </div>
+                `);
 
             marker.schoolName = school.name.toLowerCase();
             markers.push({
