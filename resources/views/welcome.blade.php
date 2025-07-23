@@ -68,8 +68,14 @@
             attribution: '&copy; OpenStreetMap contributors'
         }).addTo(map);
 
-        const schoolIcon = L.icon({
+        const schoolIconSMA = L.icon({
             iconUrl: '{{ asset('school.png') }}', // pastikan ikon tersedia
+            iconSize: [40, 40],
+            iconAnchor: [20, 40],
+            popupAnchor: [0, -35]
+        });
+        const schoolIconSMK = L.icon({
+            iconUrl: '{{ asset('icon-smk.png') }}', // pastikan ikon tersedia
             iconSize: [40, 40],
             iconAnchor: [20, 40],
             popupAnchor: [0, -35]
@@ -83,7 +89,7 @@
             if (!lat || !lng) return;
 
             L.marker([lat, lng], {
-                    icon: schoolIcon
+                    icon: school.education_type === 'SMA' ? schoolIconSMA : schoolIconSMK
                 })
                 .addTo(map)
                 .bindTooltip(
