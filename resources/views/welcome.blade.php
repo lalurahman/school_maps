@@ -19,12 +19,23 @@
             padding: 0;
         }
 
-        h1 {
-            text-align: center;
-            background-color: #4caf50;
-            color: white;
+        header {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 0.5em 1em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            color: #333;
             margin: 0;
-            padding: 0.5em 0;
         }
 
         #map {
@@ -35,7 +46,13 @@
 </head>
 
 <body>
-    <h1>Peta Sekolah Di Provinsi Sulawesi Selatan</h1>
+    <header>
+        <img
+            src="{{ asset('sulsel.png') }}"
+            alt="Logo Provinsi Sulawesi Selatan"
+        />
+        <h1>Peta Sekolah di Provinsi Sulawesi Selatan</h1>
+    </header>
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
