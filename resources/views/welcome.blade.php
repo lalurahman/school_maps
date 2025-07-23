@@ -112,11 +112,27 @@
 
 <body>
     <header>
-        <img
-            src="{{ asset('sulsel.png') }}"
-            alt="Logo Provinsi Sulawesi Selatan"
-        />
-        <h1>Peta Sekolah di Provinsi Sulawesi Selatan</h1>
+        <a
+            href="http://e-andalan.net/"
+            target="_blank"
+            style="text-decoration: none; color: inherit; display: flex; align-items: center;"
+        >
+            <img
+                src="{{ asset('sulsel.png') }}"
+                alt="Logo Provinsi Sulawesi Selatan"
+            />
+        </a>
+        <a
+            href="http://e-andalan.net/"
+            target="_blank"
+            style="text-decoration: none; color: inherit; display: flex; align-items: center;"
+        >
+            <img
+                src="{{ asset('logo1.png') }}"
+                alt="Logo Smart School"
+            />
+        </a>
+        <h1>Peta Sekolah</h1>
     </header>
     @if (env('APP_DEBUG'))
         <div
