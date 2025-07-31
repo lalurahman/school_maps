@@ -225,6 +225,15 @@
                 <div style="font-size: 14px; line-height: 1.4;">
                     <b>${school.nama + ' (' + school.npsn + ')'}</b><br><hr>
                     <table style="width: 100%;">
+                        <tr><td style="vertical-align: top;">Bentuk Pendidikan</td><td style="vertical-align: top;">: ${school.bentuk_pendidikan}</td></tr>
+                        <tr><td style="vertical-align: top;">Nomor Telepon</td><td style="vertical-align: top;">: ${school.nomor_telepon ?? '-'}</td></tr>
+                        <tr><td style="vertical-align: top;">Status Sekolah</td><td style="vertical-align: top;">: ${school.status_sekolah ?? '-'}</td></tr>
+                        <tr><td style="vertical-align: top;">Akreditasi</td><td style="vertical-align: top;">: ${school.akreditasi ?? '-'}</td></tr>
+                        <tr><td style="vertical-align: top;">Kecamatan</td><td style="vertical-align: top;">: ${school.kecamatan ?? '-'}</td></tr>
+                        <tr><td style="vertical-align: top;">Kabupaten</td><td style="vertical-align: top;">: ${school.kabupaten ?? '-'}</td></tr>
+                        <tr><td style="vertical-align: top;">Provinsi</td><td style="vertical-align: top;">: ${school.provinsi ?? '-'}</td></tr>
+                        <tr><td style="vertical-align: top;">Alamat</td><td style="vertical-align: top;">: ${school.alamat_jalan ?? '-'}</td></tr>
+                    </table>
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank"
                             style="display: none; padding: 6px 12px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 4px;">

@@ -20,7 +20,7 @@ class MapController extends Controller
     public function sd()
     {
         $schools = DB::table('sekolah')->whereIn('bentuk_pendidikan', ['SD', 'MI'])
-            ->where('status_sekolah', 'NEGERI')
+            // ->where('status_sekolah', 'NEGERI')
             ->get();
         // dd($schools); // Debugging line to check the data
         return view('welcome2', compact('schools'));
