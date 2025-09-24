@@ -240,7 +240,7 @@
                     </table>
                     <div style="text-align: center; margin-top: 10px;">
                         <a href="https://www.google.com/maps?q=${lat},${lng}" target="_blank"
-                            style="display: none; padding: 6px 12px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 4px;">
+                            style="display: inline-block; padding: 6px 12px; background-color: #4285F4; color: white; text-decoration: none; border-radius: 4px;">
                             Lihat di Google Maps
                         </a>
                     </div>
