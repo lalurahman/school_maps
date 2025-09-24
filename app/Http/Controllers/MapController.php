@@ -11,7 +11,7 @@ class MapController extends Controller
     public function index()
     {
         $schools = School::where('school_type', 'NEGERI')
-            ->whereIn('education_type', ['SMA', 'SMK'])
+            ->whereIn('education_type', ['SMA'])
             ->get();
 
         // dd($schools); // Debugging line to check the data
