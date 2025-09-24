@@ -13,6 +13,7 @@ class MapController extends Controller
         $schools = School::where('school_type', 'NEGERI')
             ->whereIn('education_type', ['SMA', 'SMK'])
             ->get();
+
         // dd($schools); // Debugging line to check the data
         return view('welcome', compact('schools'));
     }
@@ -20,8 +21,9 @@ class MapController extends Controller
     public function sd()
     {
         $schools = DB::table('sekolah')->whereIn('bentuk_pendidikan', ['SD', 'MI'])
-            // ->where('status_sekolah', 'NEGERI')
+            ->where('kabupaten', 'Kota Makassar')
             ->get();
+        dd($schools->count()); // Debugging line to check the data
         // dd($schools); // Debugging line to check the data
         return view('welcome2', compact('schools'));
     }
